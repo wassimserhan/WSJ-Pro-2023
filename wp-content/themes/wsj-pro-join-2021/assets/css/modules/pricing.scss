@@ -1,0 +1,284 @@
+.pricing {
+  padding: 40px 0;
+  &__max-width {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 25px;
+  }
+}
+
+.pricing-bar {
+  border: 1px solid $buttons;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 1rem 0;
+  @include bp(phone) {
+    display: none;
+  }
+
+  &__option {
+    font-family: 'DJ5 Escrow Light Display', serif;
+    background-color: $main;
+    color: $white;
+    text-align: center;
+    width: 100%;
+    padding: 0.5rem 0;
+    border-right: 1px solid $white;
+    transition: all 0.2s ease-in;
+    cursor: pointer;
+  }
+  &__option--active {
+    background-color: $white;
+    color: $black;
+    cursor: default;
+  }
+}
+
+.pricing-bar-dropdown {
+  display: none;
+  border: 1px solid $buttons;
+  width: 100%;
+  padding: 0.5rem 0;
+  margin: 1rem 0;
+  font-family: 'Retina Light', sans-serif;
+  font-size: 1em;
+  @include bp(phone) {
+    display: block;
+  }
+}
+
+.pricing-card {
+  display: flex;
+  justify-content: center;
+  @include bp(custom_screen) {
+    flex-direction: column;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    // max-width: 420px;
+    text-align: center;
+    width: 100%;
+    box-shadow: -4px 6px 5px -2px $lightBackground;
+    border: 1px solid $lightBackground;
+    margin-right: 8px;
+    background-color: $white;
+
+    &:last-child {
+      margin-right: 0;
+    }
+    @include bp(phone) {
+      max-width: 100%;
+      margin: 0 0 10px;
+    }
+  }
+
+  &__title {
+    font-family: 'Retina Light', sans-serif;
+    background-color: $buttons;
+    color: $white;
+    font-size: 1.2em;
+    padding: 1rem 0;
+  }
+
+  &__highlights {
+    padding: 16px;
+  }
+  &__fee-discount {
+    font-family: 'Retina Light', sans-serif;
+    background-color: $white;
+    color: $links;
+    font-size: 1.2em;
+    text-decoration: line-through;
+  }
+  &__fee {
+    background-color: $white;
+    color: $black;
+    font-family: 'Escrow Banner Light', serif;
+    font-size: 2em;
+  }
+
+  &__line {
+    width: 30px;
+  }
+
+  &__detail {
+    font-family: 'Retina Light', sans-serif;
+    padding: 0.4rem 0;
+    font-weight: 600;
+    color: $links;
+    min-height: 35px;
+  }
+
+  &__date {
+    font-family: 'Retina Light', sans-serif;
+    padding: 0.4rem 0;
+  }
+
+  &__benefits-wrapper {
+    padding-bottom: 20px;
+  }
+
+  &__benefit {
+    font-family: 'Retina Light', sans-serif;
+    padding: 0.6rem 1rem;
+    text-align: left;
+    font-size: 0.9em;
+    text-align: center;
+  }
+
+  &__benefits {
+    min-height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__benefits:nth-child(odd) {
+    background-color: $white;
+  }
+
+  &__benefits:nth-child(even) {
+    background-color: $lightBackground;
+  }
+
+  &__footnotes {
+    text-align: center;
+    font-family: 'Retina Light', sans-serif;
+    font-size: 1em;
+    line-height: 26px;
+    margin: 25px auto;
+    max-width: 600px;
+  }
+}
+
+.btn--pricing {
+  margin: 0 auto 20px;
+  margin-top: auto;
+  width: 190px;
+
+  text-transform: uppercase;
+  color: #fff;
+  background-color: rgba(183, 163, 108, 0.8);
+  border: 1px solid #ffffff !important;
+  padding: 10px 30px;
+  font-weight: 600;
+
+  outline: none;
+}
+
+.btn--pricing a {
+  color: #fff;
+  display: block;
+  line-height: 15px;
+}
+
+// Custom Dropdown
+
+.custom-select-wrapper {
+  display: none;
+  position: relative;
+  user-select: none;
+  width: 100%;
+  @include bp(phone) {
+    display: block;
+  }
+}
+.custom-select {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+}
+.custom-select__trigger {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 22px;
+  font-size: 1em;
+  font-weight: 300;
+  color: $black;
+  height: 40px;
+  line-height: 40px;
+  background: $white;
+  cursor: pointer;
+  border: 1px solid $buttons;
+}
+.custom-options {
+  position: absolute;
+  display: block;
+  top: 100%;
+  left: 0;
+  right: 0;
+  border: 1px solid $buttons;
+  border-top: 0;
+  background: $white;
+  transition: all 0.5s;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 2;
+}
+.custom-select.open .custom-options {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+.custom-option {
+  position: relative;
+  display: block;
+  padding: 0 22px 0 22px;
+  font-size: 1em;
+  font-weight: 300;
+  color: #3b3b3b;
+  line-height: 60px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.custom-option:hover {
+  cursor: pointer;
+  background-color: $lightBackground;
+}
+.custom-option.selected {
+  color: $black;
+  background-color: $lightBackground;
+}
+
+.arrow-pricing {
+  position: relative;
+  height: 15px;
+  width: 15px;
+}
+.arrow-pricing::before,
+.arrow-pricing::after {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  width: 0.15rem;
+  height: 100%;
+  transition: all 0.5s;
+}
+.arrow-pricing::before {
+  left: -5px;
+  transform: rotate(45deg);
+  background-color: $buttons;
+}
+.arrow-pricing::after {
+  left: 5px;
+  transform: rotate(-45deg);
+  background-color: $buttons;
+}
+.open .arrow-pricing::before {
+  left: -5px;
+  transform: rotate(-45deg);
+}
+.open .arrow-pricing::after {
+  left: 5px;
+  transform: rotate(45deg);
+}
+
+.benefits_wrapper {
+  min-height: 300px;
+}

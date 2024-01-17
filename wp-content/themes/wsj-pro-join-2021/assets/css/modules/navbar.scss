@@ -1,0 +1,442 @@
+.nav {
+  width: 100%;
+  z-index: 3;
+  background-color: $main;
+  position: fixed;
+
+  &__main-nav {
+    position: relative;
+    background-color: $black;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    background-color: $main;
+  }
+
+  &__links {
+    display: flex;
+    place-items: center;
+    justify-content: center;
+    @include bp(phone) {
+      display: none;
+    }
+  }
+
+  &__links__wrapper {
+    padding-left: 30px;
+  }
+
+  &__dropdown {
+    display: grid;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background-color: $main;
+    text-align: left;
+    padding: 40px 42px 0;
+    height: 100vh;
+    width: 300px;
+    transform: translateX(-100%);
+    // transition: 300ms transform;
+    grid-auto-rows: minmax(min-content, 70px);
+  }
+
+  &__dropdown-items {
+    color: $white;
+    text-align: left;
+    padding: 10px 16px;
+    font-family: 'Retina Book', sans-serif;
+    text-transform: capitalize;
+    font-size: 1.2em;
+  }
+
+  &__dropdown-hub-items {
+    margin: 40px 0 0;
+  }
+
+  &__dropdown-hub-items li {
+    text-align: left;
+    padding: 20px 0;
+    font-family: 'Retina Book', sans-serif;
+    text-transform: capitalize;
+    font-size: 1.2em;
+    color: $white;
+  }
+
+  &__dropdown-hub-items a {
+    color: $white;
+  }
+
+  &__dropdown-hub-items a:hover {
+    color: $buttons;
+  }
+
+  &__dropdown-fig {
+    margin: 0;
+  }
+
+  &__dropdown-fig img {
+    margin: auto;
+    display: block;
+    max-width: 180px;
+    padding-bottom: 20px;
+    @include bp(phone) {
+      max-width: 230px;
+    }
+  }
+
+  &__items {
+    color: $white;
+    text-align: center;
+    padding: 10px 16px;
+    font-family: 'Retina Light', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.7em;
+  }
+
+  &__link {
+    color: $white;
+  }
+
+  &__items-dropdown {
+    font-family: 'DJ5 Escrow Light Display', sans-serif;
+  }
+
+  &__items:hover {
+    color: $buttons;
+  }
+
+  &__submenu-wrapper {
+    background-color: $lightBackground;
+    margin-top: 67px;
+  }
+
+  &__submenu {
+    position: relative;
+    display: flex;
+    place-items: center;
+    justify-content: center;
+  }
+
+  &__submenu-dropdown:first-child {
+    position: relative;
+    display: inline-block;
+  }
+
+  &__submenu-items {
+    color: $black;
+    text-align: center;
+    padding: 20px 16px;
+    font-family: 'Retina Light', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.8em;
+  }
+
+  &__submenu-items:first-child {
+    color: $black;
+    text-align: center;
+    padding: 10px 16px;
+    font-family: 'Retina Light', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__submenu-overlay {
+    display: none;
+    position: absolute;
+    background-color: #1a2f35;
+    width: 170px;
+    z-index: 1;
+    top: -10px;
+    left: -5px;
+    height: 46px;
+  }
+
+  &__submenu-items-dropdown {
+    display: none;
+    position: absolute;
+    background-color: $main;
+    min-width: 170px;
+    z-index: 1;
+    font-size: 0.7rem;
+    left: -5px;
+  }
+
+  &__submenu-items-dropdown li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__submenu-items-dropdown a {
+    color: $white;
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+  }
+
+  &__submenu-items-dropdown a:hover {
+    background-color: $main;
+    color: $buttons;
+  }
+
+  &__submenu-dropdown:hover &__submenu-items:first-child {
+    color: $white;
+  }
+
+  &__submenu-dropdown:hover &__submenu-items-dropdown,
+  &__submenu-dropdown:hover &__submenu-overlay {
+    display: block;
+  }
+
+  &__submenu-fig {
+    margin: 0;
+  }
+
+  &__submenu-fig img {
+    max-width: 300px;
+    width: 100%;
+    display: block;
+    margin: auto;
+    padding: 10px 0;
+  }
+}
+
+.btn--header {
+  position: absolute;
+  right: 40px;
+  // top: 20px;
+  align-self: center;
+
+  @include bp(tablet_small) {
+    display: none !important;
+  }
+}
+
+.btn--dropdown {
+  display: none;
+  @include bp(phone) {
+    display: block;
+    background-color: transparent;
+    border: 2px solid #b7a36c !important;
+    padding: 0.5rem 3rem;
+    font-weight: 600;
+    margin: auto;
+    width: 200px;
+  }
+}
+
+.brand__container {
+  &__fig {
+    width: 350px;
+    min-height: 70px;
+    margin: 2px 0;
+    background-color: $main;
+    padding: 25px;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0px 6px 0px 0px rgba(0, 0, 0, 0.75);
+
+    @include bp(phone) {
+      padding: 10px;
+    }
+
+    &--a {
+      display: flex;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &--fixed {
+    min-height: 60px;
+    position: relative;
+
+    .brand__container__fig {
+      min-height: 60px;
+      padding: 18px;
+      box-shadow: none;
+      margin: 0;
+    }
+  }
+}
+
+.brand__logo {
+  max-width: 175px;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  transition: all 0.2s ease-in-out;
+
+  &--no-scroll {
+    display: block;
+  }
+  &--scroll {
+    display: block;
+    max-width: 115px;
+  }
+}
+
+.fixed-position {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+// Custom Dropdown
+
+.nav-select-wrapper {
+  display: none;
+  position: relative;
+  user-select: none;
+  width: 100%;
+  @include bp(phone) {
+    display: block;
+  }
+}
+.nav-select {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.nav-select__trigger {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 22px;
+  font-size: 0.9em;
+  font-weight: 300;
+  color: $white;
+  height: 40px;
+  line-height: 40px;
+  background: $black;
+  cursor: pointer;
+}
+.nav-options {
+  position: absolute;
+  display: block;
+  top: 100%;
+  left: 0;
+  right: 0;
+  border: 1px solid $buttons;
+  border-top: 0;
+  background: $white;
+  transition: all 0.5s;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.nav-select.open .nav-options {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+  z-index: 6;
+}
+.nav-option {
+  position: relative;
+  display: block;
+  padding: 0 22px 0 22px;
+  font-size: 1em;
+  font-weight: 300;
+  color: #3b3b3b;
+  line-height: 60px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.nav-option:hover {
+  cursor: pointer;
+  background-color: $lightBackground;
+}
+.nav-option.selected {
+  color: $black;
+  background-color: $lightBackground;
+}
+
+.arrow-select {
+  position: relative;
+  height: 15px;
+  width: 15px;
+}
+.arrow-select::before,
+.arrow-select::after {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  width: 0.15rem;
+  height: 100%;
+  transition: all 0.5s;
+}
+.arrow-select::before {
+  left: 8px;
+  transform: rotate(45deg);
+  background-color: $white;
+}
+.arrow-select::after {
+  left: 18px;
+  transform: rotate(-45deg);
+  background-color: $white;
+}
+.open .arrow-select::before {
+  left: 8px;
+  transform: rotate(-45deg);
+}
+.open .arrow-select::after {
+  left: 18px;
+  transform: rotate(45deg);
+}
+
+// Control push nav
+.pull-main {
+  transform: translateX(-1);
+}
+
+.hide-nav {
+  transform: translateX(-1);
+}
+
+.push-main {
+  /* Same width of nav__dropdown */
+  transform: translateX(300px);
+  @include bp(phone) {
+    transform: translateX(0);
+  }
+}
+
+.show-nav {
+  transform: translateX(0);
+  @include bp(phone) {
+    width: 100%;
+  }
+}
+
+.pull-main,
+.hide-nav {
+  transition: 300ms transform;
+}
+
+.push-main,
+.show-nav {
+  transition: 300ms transform;
+  @include bp(phone) {
+    transform: translateX(0);
+  }
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid $buttons;
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  left: 3px;
+  top: 14px;
+}

@@ -1,0 +1,91 @@
+.products {
+  &__max-width {
+    width: 100%;
+    background-color: $altGray;
+  }
+
+  &__headline {
+    text-align: center;
+    padding: 20px 0;
+  }
+  &__items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+  }
+
+  &__item {
+    margin: 5px;
+    padding: 20px 80px;
+    flex: 0 0 49%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: $lightBackground;
+    @include bp(before_ipad) {
+      flex: 0 0 100%;
+    }
+  }
+
+  // &__item:nth-child(-n + 2) {
+  //   border-bottom: 1px solid #000;
+  // }
+
+  // &__item:nth-child(even) {
+  //   border-left: 1px solid #000;
+  // }
+
+  &__icon {
+    width: 100%;
+    max-width: 100px;
+    margin: 20px auto;
+  }
+
+  &__logo {
+    width: 100%;
+    max-width: 300px;
+    margin: 20px auto;
+  }
+  &__contact {
+    text-align: center;
+    padding: 20px 0;
+    &--email {
+      color: #b7a36c;
+    }
+  }
+}
+
+.btn--container {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  padding: 10px 0;
+  margin: auto auto 0;
+}
+
+.btn--products {
+  margin: 10px 0;
+  color: $white;
+  border: 1px solid $black !important;
+  background-color: $white;
+  padding: 8px 17px;
+  text-transform: uppercase;
+  font-weight: 600;
+
+  &-sign {
+    border: 1px solid $buttons !important;
+    background-color: $buttons;
+  }
+
+  &-learn {
+    border: 1px solid $main !important;
+    background-color: $main;
+  }
+  &__link {
+    color: $white;
+    display: block;
+    line-height: 15px;
+  }
+}

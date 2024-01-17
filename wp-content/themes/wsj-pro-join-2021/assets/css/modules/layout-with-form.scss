@@ -1,0 +1,417 @@
+.layout-with-form {
+  padding: 40px 0px;
+  @include bp(phone) {
+    display: block;
+  }
+
+  &__nav {
+    padding-top: 20px;
+    display: flex;
+    place-items: center;
+    justify-content: center;
+  }
+
+  &__nav-item {
+    color: $black;
+    text-align: center;
+    padding: 10px 16px;
+    font-family: 'Retina Light', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.8em;
+  }
+
+  &__nav-link {
+    color: $black;
+  }
+
+  &__fig-info {
+    margin: 0;
+    width: 35%;
+    position: relative;
+    @include bp(ipad_pro) {
+      max-width: 570px;
+    }
+    @include bp(tablet) {
+      max-width: 450px;
+    }
+
+    @include bp(before_ipad) {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
+  &__fig-info img {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: auto;
+  }
+
+  &__fig-pattern {
+    margin: 0;
+    width: 100%;
+    position: relative;
+  }
+
+  &__fig-pattern img {
+    display: block;
+    width: 100%;
+    margin: 50px auto;
+  }
+
+  &__wrapper-packshot {
+    position: absolute;
+    top: 520px;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+
+  &__fig-packshot {
+    margin: 0;
+    width: 100%;
+  }
+
+  &__fig-packshot img {
+    display: block;
+    width: 100%;
+    max-width: 660px;
+    margin: auto;
+  }
+
+  &__card {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    @include bp(before_ipad) {
+      flex-direction: column;
+      max-width: 100%;
+    }
+  }
+
+  &__image {
+    max-width: 100%;
+  }
+
+  &__detail {
+    max-width: 420px;
+    // margin-top: 50px;
+    @include bp(ipad_pro) {
+      padding: 0 20px 0;
+      margin-left: 0;
+    }
+
+    @include bp(before_ipad) {
+      margin-left: 0;
+      padding: 20px 20px 0;
+      margin-top: 0;
+      width: 100%;
+      margin: auto;
+    }
+  }
+
+  &__headline {
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: 'Escrow Banner Light', serif;
+    font-size: 1.6em;
+    font-weight: 300;
+  }
+
+  &__copy {
+    font-family: 'Retina Light', sans-serif;
+    font-size: 1em;
+    color: $headlineText;
+    line-height: 25px;
+    @include bp(before_ipad) {
+      text-align: center;
+    }
+  }
+
+  &__line {
+    margin: 10px 0 !important;
+    max-width: 400px;
+    @include bp(ipad_pro) {
+      max-width: 250px;
+      width: 100%;
+    }
+
+    @include bp(phone) {
+      max-width: 250px;
+      width: 100%;
+    }
+  }
+
+  &__bullet-list {
+    position: relative;
+    list-style: none;
+    counter-reset: item;
+    list-style-position: outside !important;
+    max-width: 430px;
+    margin: auto;
+    @include bp(phone) {
+      padding: 0 20px;
+    }
+  }
+
+  &__bullet {
+    font-family: 'Retina Light', sans-serif;
+    font-size: 1em;
+    padding: 0 20px;
+    counter-increment: item;
+    line-height: 25px;
+    color: $headlineText;
+  }
+
+  &__bullet-title {
+    font-family: 'Retina Light';
+    font-weight: 600;
+  }
+
+  &__bullet:before {
+    margin-right: 10px;
+    content: '\2022';
+    color: $buttons;
+    font-family: 'Escrow Banner Light', sans-serif;
+    width: 1.2em;
+    font-size: 1.2em;
+    position: absolute;
+    left: -2px;
+    display: inline-block;
+    @include bp(phone) {
+      left: 3px;
+    }
+  }
+
+  &__modal-container {
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility 0.3s linear, opacity 0.3s linear;
+    top: 30px;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: auto;
+    z-index: 1;
+
+    @include bp(phone) {
+      top: 67px;
+      height: auto;
+    }
+  }
+
+  &__show {
+    visibility: visible;
+    opacity: 1;
+    z-index: 2;
+  }
+
+  &__modal {
+    background-color: $white;
+    width: 600px;
+    max-width: 100%;
+    // padding: 40px 0px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    max-height: calc(100vh - 67px);
+    overflow-y: auto;
+  }
+
+  &__button-close-modal {
+    background-color: $white;
+    display: block;
+    font-size: 2rem;
+    font-weight: 300;
+    margin-left: auto;
+    border: none;
+    cursor: pointer;
+  }
+
+  .legal {
+    display: flex;
+    font-size: 0.8rem;
+    margin: 20px 0;
+  }
+
+  .disclaimer {
+    font-size: 0.8rem;
+    margin: 20px 0;
+    color: $black;
+    & a {
+      color: $black;
+      text-decoration: underline;
+    }
+  }
+
+  &__fig {
+    position: relative;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    padding-bottom: 30px;
+  }
+
+  &__fig--img {
+    display: block;
+    max-width: 250px;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
+
+  .form-description {
+    text-align: center;
+    font-family: 'Retina Light', sans-serif;
+    font-size: 1em;
+    line-height: 26px;
+    padding-top: 0;
+    margin-bottom: 25px;
+  }
+
+  &__helper {
+    position: relative;
+    margin-bottom: 10px;
+
+    &:last-of-type {
+      // margin-bottom: 0;
+    }
+  }
+
+  &__label {
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    color: black;
+    font-family: 'Retina Light', sans-serif;
+    font-size: 1.1em;
+    transition: 0.3s;
+    z-index: 1;
+  }
+
+  &__input {
+    position: relative;
+    width: 100%;
+    padding: 5px 0;
+    color: black;
+    background-color: transparent;
+    border-width: 0;
+    border-bottom: 1px solid $altGray;
+    outline: none;
+    font-family: 'Retina Light', sans-serif;
+    font-size: 1em;
+    z-index: 2;
+    border-radius: 0;
+
+    &::placeholder {
+      opacity: 0;
+    }
+
+    &:not(:placeholder-shown) {
+      & + .form__label {
+        bottom: 38px;
+        font-size: 0.8em;
+      }
+    }
+
+    &:focus {
+      & + .form__label {
+        bottom: 38px;
+        font-size: 0.8em;
+      }
+    }
+  }
+
+  &__select {
+    border-radius: 0;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #bbb;
+    padding: 6px 0;
+    width: 100%;
+    font-family: 'Retina Light', sans-serif;
+    font-size: 1.2em;
+  }
+
+  &__wrapper {
+    max-width: 550px;
+    margin: 0 auto;
+    padding: 0 15px;
+
+    &__headline {
+      text-align: center;
+      font-family: 'Escrow Banner Light', serif;
+      font-size: 1.6em;
+      color: $headlineText;
+      margin-bottom: 25px;
+      font-weight: 300;
+    }
+  }
+
+  .thanks {
+    min-height: 250px;
+
+    @include bp(phone) {
+      min-height: 100px;
+    }
+
+    &__headline {
+      text-align: center;
+      font-family: 'Escrow Banner Light', sans-serif;
+      font-size: 2em;
+      color: $headlineText;
+    }
+
+    &__desc {
+      text-align: center;
+      font-family: 'Retina Light', sans-serif;
+      font-size: 1em;
+      line-height: 26px;
+      padding: 25px 0;
+      margin-bottom: 25px;
+    }
+  }
+
+  .reg-errors {
+    background: #a71a1a;
+    display: none;
+    color: $white;
+    font-size: 12px;
+    padding: 10px 0;
+    margin-top: 10px;
+  }
+}
+
+// Hero CTA's
+.btn--layout-with-form {
+  color: #ffffff;
+  background-color: $buttons;
+  font-size: 0.5em;
+  padding: 10px 30px;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 20px 0 0;
+
+  @include bp(before_ipad) {
+    margin: auto;
+    display: block;
+    margin-top: 20px;
+  }
+}
+
+.btn--layout-with-form:hover {
+  opacity: 0.8;
+}
+
+.btn--layout-with-form__link {
+  color: $white;
+  display: block;
+  line-height: 15px;
+}

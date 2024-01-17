@@ -1,0 +1,25 @@
+.contact {
+  padding: 40px 0;
+
+  &__max-width {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 25px;
+  }
+
+  &__headline {
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: 'Escrow Banner Light', serif;
+    font-size: 1.6em;
+    font-weight: 300;
+  }
+
+  &__copy {
+    text-align: center;
+  }
+
+  &__copy a {
+    color: $links;
+  }
+}

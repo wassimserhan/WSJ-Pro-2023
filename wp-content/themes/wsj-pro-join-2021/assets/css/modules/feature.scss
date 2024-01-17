@@ -1,0 +1,222 @@
+.features {
+  padding: 40px 0px 0px;
+  @include bp(phone) {
+    display: block;
+  }
+
+  &__fig-info {
+    margin: 0;
+    width: 100%;
+    position: relative;
+    padding: 0 0 20px;
+    @include bp(ipad_pro) {
+      max-width: 570px;
+    }
+    @include bp(tablet) {
+      max-width: 450px;
+    }
+
+    @include bp(custom_screen-2) {
+      width: 100%;
+      max-width: 100%;
+      padding: 30px 0;
+    }
+
+    &-horizontal {
+      display: block;
+      @include bp(phone) {
+        display: none;
+      }
+    }
+
+    &-mobile {
+      display: none;
+      @include bp(phone) {
+        display: block;
+      }
+    }
+  }
+
+  &__fig-info img {
+    width: 100%;
+    max-width: 300px;
+    @include bp(custom_screen-2) {
+      max-width: 200px;
+      margin: auto;
+    }
+  }
+
+  &__fig-packshot {
+    margin: 0;
+    width: 100%;
+  }
+
+  &__fig-packshot img {
+    display: block;
+    width: 100%;
+    max-width: 560px;
+    margin: auto;
+  }
+
+  &__card {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    margin: 0 auto;
+    max-width: 1250px;
+
+    &--reverse {
+      flex-direction: row-reverse;
+    }
+    @include bp(custom_screen-2) {
+      flex-direction: column;
+      max-width: 100%;
+    }
+    @include bp(phone) {
+      flex-direction: column;
+      padding: 20px;
+    }
+  }
+
+  &__image {
+    max-width: 100%;
+  }
+
+  &__detail {
+    width: 100%;
+    padding: 0 30px;
+
+    @include bp(custom_screen-2) {
+      width: 100%;
+      text-align: left;
+      margin: 0;
+      padding: 0 20px;
+    }
+  }
+
+  &__headline {
+    font-family: 'Escrow Banner Light', serif;
+    font-weight: 400;
+    font-size: 1.6em;
+    color: $headlineText;
+    margin: 0;
+    width: 100%;
+    font-weight: 400;
+    padding: 0;
+  }
+
+  &__description {
+    font-family: 'Retina Light', sans-serif;
+    font-size: 1em;
+    color: $headlineText;
+    line-height: 25px;
+    padding: 20px 0 0;
+  }
+
+  &__bullets {
+    list-style-type: initial;
+    margin: auto 25px;
+  }
+
+  &__bullet {
+    padding: 5px 0;
+  }
+
+  &__benefits {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 40px;
+    margin: auto;
+
+    &--reverse {
+      flex-direction: row-reverse;
+    }
+    @include bp(custom_screen-2) {
+      flex-direction: column;
+      max-width: 100%;
+    }
+    @include bp(phone) {
+      flex-direction: column;
+      padding: 20px;
+    }
+  }
+
+  &__benefit {
+    width: 100%;
+    // padding: 0 60px;
+
+    @include bp(custom_screen-2) {
+      width: 100%;
+      text-align: center;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    &-title {
+      font-family: 'Retina Book', sans-serif;
+      font-size: 1em;
+      letter-spacing: 0.8px;
+      color: $headlineText;
+      line-height: 25px;
+      padding: 20px 30px 0px;
+      text-transform: uppercase;
+    }
+
+    &-img {
+      text-align: center;
+      margin: 0 auto;
+      // padding: 0 30px;
+      width: 100%;
+
+      img {
+        padding: 0 30px;
+        width: 100%;
+      }
+
+      @include bp(custom_screen-2) {
+        width: 100%;
+        padding-top: 20px;
+      }
+    }
+  }
+
+  &__callout {
+    max-width: 580px;
+    width: 100%;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Retina Light', sans-serif;
+    font-size: 1em;
+    color: #1a2f35;
+    line-height: 25px;
+  }
+}
+// Hero CTA's
+.btn--hero {
+  color: #ffffff;
+  background-color: #b6a26b;
+  font-size: 0.5em;
+  padding: 10px 30px;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 0 0 30px;
+  &--hero-intro {
+    margin: 20px 0 0;
+  }
+}
+
+.btn--hero:hover {
+  opacity: 0.8;
+}
+
+.btn--hero__link {
+  color: $white;
+  display: block;
+  line-height: 15px;
+}

@@ -1,0 +1,74 @@
+//button
+.btn {
+  font-family: 'Retina Book', sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+.btn--primary {
+  // display: inline-block;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: transparent;
+  border: 1px solid $white !important;
+  padding: 10px 30px;
+  font-weight: 600;
+  min-width: 110px;
+  outline: none;
+
+  &:focus {
+    outline: none;
+  }
+
+  &__link {
+    color: $white;
+    display: block;
+    line-height: 15px;
+  }
+}
+
+.btn--primary:hover {
+  background-color: rgba(183, 163, 108, 0.8);
+}
+
+.btn--primary__speakers-view {
+  display: block;
+  margin: auto;
+}
+
+.loading {
+  .load-wrapp:last-child {
+    margin-right: 0;
+  }
+  .load-wrapp .line {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background-color: $white;
+  }
+  .load-3 .line:nth-last-child(1) {
+    animation: loadingC 0.6s 0.1s linear infinite;
+  }
+  .load-3 .line:nth-last-child(2) {
+    animation: loadingC 0.6s 0.2s linear infinite;
+  }
+  .load-3 .line:nth-last-child(3) {
+    animation: loadingC 0.6s 0.3s linear infinite;
+  }
+}
+@keyframes loadingC {
+  0 {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, 8px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
